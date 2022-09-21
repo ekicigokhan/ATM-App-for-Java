@@ -59,7 +59,7 @@ public class Test {
 				if (iban.equals(ekremIban)) {
 					System.out.print("Ekrem EKİCİ hesabına yatırmak istediğiniz tutarı giriniz : ");
 					double yatacakTutar = scanner.nextDouble();
-					if (yatacakTutar >= gokhanBakiye) {
+					if (gokhanBakiye >= yatacakTutar) {
 						double kalanBakiye = gokhanBakiye - yatacakTutar;
 						System.out.println("İşlem başarı ile gerçekleşti.. " + " Kalan bakiyeniz :" + kalanBakiye + " TL");
 						ekremBakiye = ekremBakiye + yatacakTutar;
