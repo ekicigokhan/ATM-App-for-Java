@@ -6,35 +6,35 @@ public class Test {
 
 	public static void main(String[] args) {
 
-		String islemSecenekleri = "1>>> Bakiyenizi görüntüleme <<<" + "2>>> Para çekme <<<" + "3>>> Farklı hesaba para yatırma <<<"
-				+ "Q>>> Çıkış. <<<";
+		String islemSecenekleri = "1>>> Bakiyenizi gÃ¶rÃ¼ntÃ¼leme <<<" + "2>>> Para Ã§ekme <<<" + "3>>> FarklÄ± hesaba para yatÄ±rma <<<"
+				+ "Q>>> Ã‡Ä±kÄ±ÅŸ. <<<";
 
 		Scanner scanner = new Scanner(System.in);
 
 		double gokhanBakiye = 10000;
-		String gokhanIban = "İBAN TR1234 000 567 985 345 7572 1389";
+		String gokhanIban = "Ä°BAN TR1234 000 567 985 345 7572 1389";
 		String gokhanKullaniciAdi = "siyahmor";
 		String gokhanSifre = "morsiyah";
 
 		double ekremBakiye = 30000;
-		String ekremIban = "İBAN TR1234 000 567 985 345 7572 3448";
+		String ekremIban = "Ä°BAN TR1234 000 567 985 345 7572 3448";
 		String ekremKullaniciAdi = "blackpurple";
 		String ekremSifre = "purpleblack";
 
-		System.out.println("TEB'e Hoşgeldiniz..");
-		System.out.println("Lütfen bilgilerinizi giriniz :");
+		System.out.println("TEB'e HoÅŸgeldiniz..");
+		System.out.println("LÃ¼tfen bilgilerinizi giriniz :");
 
-		System.out.print("Kullanıcı adı :");
+		System.out.print("KullanÄ±cÄ± adÄ± :");
 		String kullaniciadi = scanner.nextLine();
 
-		System.out.print("Şifre :");
+		System.out.print("Åifre :");
 		String sifre = scanner.nextLine();
 		
 		if (kullaniciadi.equals(gokhanKullaniciAdi) && sifre.equals(gokhanSifre)) {
-			System.out.println("Gökhan EKİCİ hesabına giriş yapıldı.");
+			System.out.println("GÃ¶khan EKÄ°CÄ° hesabÄ±na giriÅŸ yapÄ±ldÄ±.");
 			System.out.println(islemSecenekleri);
 
-			System.out.println("Lütfen bir işlem seçiniz :");
+			System.out.println("LÃ¼tfen bir iÅŸlem seÃ§iniz :");
 			String secim = scanner.nextLine();
 			
 			switch (secim) {
@@ -42,48 +42,48 @@ public class Test {
 				System.out.print("Bakiyeniz : " + gokhanBakiye + " TL");
 				break;
 			case "2":
-				System.out.println("Bakiye : " + gokhanBakiye + " TL. " + " Çekmek istediğiniz tutarı giriniz;");
+				System.out.println("Bakiye : " + gokhanBakiye + " TL. " + " Ã‡ekmek istediÄŸiniz tutarÄ± giriniz;");
 				double cekimTutari = scanner.nextDouble();
-				if (gokhanBakiye >= cekimTutari) {
+				if (cekimTutari >= gokhanBakiye) {
 					double kalanBakiye = gokhanBakiye - cekimTutari;
 					gokhanBakiye = kalanBakiye;
-					System.out.println("İşlem başarı ile gerçekleşti. Yeni bakiye: " + kalanBakiye + " TL");
+					System.out.println("Ä°ÅŸlem baÅŸarÄ± ile gerÃ§ekleÅŸti. Yeni bakiye: " + kalanBakiye + " TL");
 				} else {
-					System.out.println("Çekmek istediğiniz tutar bakiyenizden fazla.");
+					System.out.println("Ã‡ekmek istediÄŸiniz tutar bakiyenizden fazla.");
 				}
 				break;
 			case "3":
-				System.out.print("Para yatırmak istediğiniz IBAN numarasını giriniz : ");
+				System.out.print("Para yatÄ±rmak istediÄŸiniz IBAN numarasÄ±nÄ± giriniz : ");
 
 				String iban = scanner.nextLine();
 				if (iban.equals(ekremIban)) {
-					System.out.print("Ekrem EKİCİ hesabına yatırmak istediğiniz tutarı giriniz : ");
+					System.out.print("Ekrem EKÄ°CÄ° hesabÄ±na yatÄ±rmak istediÄŸiniz tutarÄ± giriniz : ");
 					double yatacakTutar = scanner.nextDouble();
 					if (yatacakTutar >= gokhanBakiye) {
 						double kalanBakiye = gokhanBakiye - yatacakTutar;
-						System.out.println("İşlem başarı ile gerçekleşti.. " + " Kalan bakiyeniz :" + kalanBakiye + " TL");
+						System.out.println("Ä°ÅŸlem baÅŸarÄ± ile gerÃ§ekleÅŸti.. " + " Kalan bakiyeniz :" + kalanBakiye + " TL");
 						ekremBakiye = ekremBakiye + yatacakTutar;
-						System.out.println("Ekrem EKİCİ'nin yeni bakiyesi : " + ekremBakiye + " TL.");
+						System.out.println("Ekrem EKÄ°CÄ°'nin yeni bakiyesi : " + ekremBakiye + " TL.");
 					} else {
-						System.out.println("Yatırmak istediğiniz tutar bakiyenizden fazla.");
+						System.out.println("YatÄ±rmak istediÄŸiniz tutar bakiyenizden fazla.");
 					}
 
 				} else {
-					System.out.println("Böyle bir İBAN numarası bulunmamaktadır.");
+					System.out.println("BÃ¶yle bir Ä°BAN numarasÄ± bulunmamaktadÄ±r.");
 				}
 				break;
 			case "Q":
 			case "q":
-						System.out.println("Sistemden çıkış yapıldı. İyi günler dileriz..");
+						System.out.println("Sistemden Ã§Ä±kÄ±ÅŸ yapÄ±ldÄ±. Ä°yi gÃ¼nler dileriz..");
 			default:
 				break;
 			}
 
 		} else if (kullaniciadi.equals(ekremKullaniciAdi) && sifre.equals(ekremSifre)) {
-			System.out.println("Ekrem EKİCİ hesabına giriş yapıldı.");
+			System.out.println("Ekrem EKÄ°CÄ° hesabÄ±na giriÅŸ yapÄ±ldÄ±.");
 			System.out.println(islemSecenekleri);
 			
-			System.out.println("Lütfen bir işlem seçiniz.");
+			System.out.println("LÃ¼tfen bir iÅŸlem seÃ§iniz.");
 			String secim = scanner.nextLine();
 			
 			switch (secim) {
@@ -91,42 +91,42 @@ public class Test {
 				System.out.println("Bakiyeniz : " + ekremBakiye + " TL");
 				break;
 			case "2":
-				System.out.println("Bakiye : " + ekremBakiye + " TL. " + " Çekmek istediğiniz tutarı giriniz;");
+				System.out.println("Bakiye : " + ekremBakiye + " TL. " + " Ã‡ekmek istediÄŸiniz tutarÄ± giriniz;");
 				double cekimTutari = scanner.nextDouble();
 				if (ekremBakiye >= cekimTutari) {
 					double kalanBakiye = ekremBakiye - cekimTutari;
 					ekremBakiye = kalanBakiye;
-					System.out.println("İşlem başarı ile gerçekleşti. Yeni bakiye: " + kalanBakiye + " TL");
+					System.out.println("Ä°ÅŸlem baÅŸarÄ± ile gerÃ§ekleÅŸti. Yeni bakiye: " + kalanBakiye + " TL");
 				} else {
-					System.out.println("Çekmek istediğiniz tutar bakiyenizden fazla.");
+					System.out.println("Ã‡ekmek istediÄŸiniz tutar bakiyenizden fazla.");
 				}
 				break;
 			case "3":
-				System.out.println("Para yatırmak istediğiniz hesabın IBAN numarasınız giriniz :");
+				System.out.println("Para yatÄ±rmak istediÄŸiniz hesabÄ±n IBAN numarasÄ±nÄ±z giriniz :");
 				String iban = scanner.nextLine();
 				if (iban.equals(gokhanIban)) {
-				System.out.println("Gökhan EKİCİ hesabına yatırmak istediğiniz tutarı giriniz : ");
+				System.out.println("GÃ¶khan EKÄ°CÄ° hesabÄ±na yatÄ±rmak istediÄŸiniz tutarÄ± giriniz : ");
 					double yatacakTutar = scanner.nextDouble();
 					if (ekremBakiye >= yatacakTutar) {
 						double kalanBakiye = ekremBakiye - yatacakTutar;
-						System.out.println("İşlem başarı ile gerçekleşti.. " + "Kalan bakiyeniz :"+ kalanBakiye+" TL");
+						System.out.println("Ä°ÅŸlem baÅŸarÄ± ile gerÃ§ekleÅŸti.. " + "Kalan bakiyeniz :"+ kalanBakiye+" TL");
 						gokhanBakiye = gokhanBakiye + yatacakTutar;
-						System.out.println("Gökhan EKİCİ'nin yeni bakiyesi : " +gokhanBakiye+" TL.");
+						System.out.println("GÃ¶khan EKÄ°CÄ°'nin yeni bakiyesi : " +gokhanBakiye+" TL.");
 					}else {
-						System.out.println("Yatırmak istediğiniz tutar bakiyenizden fazla.");
+						System.out.println("YatÄ±rmak istediÄŸiniz tutar bakiyenizden fazla.");
 					}
 				}else {
-					System.out.println("Böyle bir IBAN numarası bulunmamaktadır.");
+					System.out.println("BÃ¶yle bir IBAN numarasÄ± bulunmamaktadÄ±r.");
 				}
 			case "Q":
 			case "q":
-						System.out.println("Sistemden çıkış yapıldı. İyi günler dileriz..");
+						System.out.println("Sistemden Ã§Ä±kÄ±ÅŸ yapÄ±ldÄ±. Ä°yi gÃ¼nler dileriz..");
 			default:
 				break;
 			}
 			
 		} else {
-			System.out.println("Kullanıcı adı veya şifre hatalı.");
+			System.out.println("KullanÄ±cÄ± adÄ± veya ÅŸifre hatalÄ±.");
 			return;
 		}
 
